@@ -14,28 +14,19 @@ class _RazorPayPageState extends State<RazorPayPage> {
   TextEditingController amtController = TextEditingController();
 
   void openCheckout(amount) async {
+    print('Amount ===== $amount');
     amount = amount * 100;
+    print('Amount ===== $amount');
+
     var options = {
-      'key': 'rzp_test_TVioNvOp7yQ2wA',
-      'amount': amount,
+      'key': 'rzp_test_w57hbfiqJrI6jl',
+      'amount': 100,
       'name': 'Geeks',
-      'order_id': 'hska5s766sdahdkka',
       'description': 'Edunet Event',
-      'prefill': {'contact': '1234567890', 'email': 'himynameiskennithjoseph@gmail.com'},
-      // 'external': {
-      //   'wallets': []
-      // }
-      // "options": {
-      //   "checkout": {
-      //     "method": {
-      //       //here you have to specify
-      //       "netbanking": "1",
-      //       "card": "1",
-      //       "upi": "1",
-      //       "wallet": "0"
-      //     }
-      //   }
-      // }
+      'prefill': {
+        'contact': '1234567890',
+        'email': 'himynameiskennithjoseph@gmail.com'
+      },
     };
 
     try {
@@ -86,15 +77,16 @@ class _RazorPayPageState extends State<RazorPayPage> {
       backgroundColor: Colors.grey[800],
       body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
               height: 100,
             ),
-            Image.network(
-              'https://media.geeksforgeeks.org/gfg-gg-logo.svg',
-              height: 100,
-              width: 300,
-            ),
+            // Image.network(
+            //   'https://media.geeksforgeeks.org/gfg-gg-logo.svg',
+            //   height: 100,
+            //   width: 300,
+            // ),
             SizedBox(
               height: 10,
             ),
